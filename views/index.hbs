@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pub Website</title>
+    <link rel="stylesheet" href="stylesheets/index.css">
+    <script src="https://kit.fontawesome.com/1bd84261e3.js" crossorigin="anonymous"></script>
+ 
+</head>
+<body>
+    <div class="header">
+    <div class="container">
+            <div class="log">
+                <img src="./images/logo-removebg-preview.png" alt="">
+            </div>
+        
+            <div class="nav-right"> 
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#event">Events</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <i class="fa-sharp fa-solid fa-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+        </div>
+
+
+    </div>
+    <div class="welcom-text">
+        <h3>Welcome To</h3>
+        <h2><span>I</span>GNYT</h2>
+    </div>
+
+    <div class="home-order-btn">
+        <div class="home-order-beer">
+            {{!-- <a class="home-order-beer-btn" href="">Beer Menu</a> --}}
+            <button class="home-order-beer-btn" onclick="openModal1()">Beer Menu</button>
+
+        </div>
+        <div class="home-order-food">
+        {{!-- <a class="home-order-food-btn" href="" onclick="openModal()">Order Food</a> --}}
+        <button class="home-order-food-btn" onclick="openModal()">Food Menu</button>
+
+        </div>
+    </div>
+    </div>
+    {{!-- -------------Offers-------------- --}}
+    <div class="home-offer">
+        <p><i class="fa-solid fa-utensils"></i> Special offers <i class="fa-solid fa-wine-glass"></i></p>
+    </div>
+      <div class="carousel">
+        <img class="box" src="images/offer1.jpg" alt="Image 1">
+        <img class="box" src="images/offer2.jpg" alt="Image 3">
+        <img class="box" src="images/offer3.jpg" alt="Image 4">
+        <img class="box" src="images/offer4.jpg" alt="Image 5">
+        <img class="box" src="images/offer5.jpg" alt="Image 2">
+        <!-- Duplicate the imaimages/offer.jpgess looping -->
+        <img class="box" src="images/offer1.jpg" alt="Image 1">
+        <img class="box" src="images/offer2.jpg" alt="Image 2">
+        <img class="box" src="images/offer3.jpg" alt="Image 3">
+        <img class="box" src="images/offer4.jpg" alt="Image 4">
+        <img class="box" src="images/offer5.jpg" alt="Image 5">
+                <!-- Duplicate the imaimages/offer.jpgess looping -->
+        <img class="box" src="images/offer1.jpg" alt="Image 1">
+        <img class="box" src="images/offer2.jpg" alt="Image 2">
+        <img class="box" src="images/offer3.jpg" alt="Image 3">
+    </div>
+
+    {{!-- --------about----------- --}}
+    
+    <div class="about-heading" id="about">
+            <p><i class="fa-solid fa-utensils"></i> About IGNYT <i class="fa-solid fa-wine-glass"></i></p>
+     </div>
+<div class="about-ignyt">
+    <div class="photo" onclick="toggleZoom(this)">
+        <img src="images/bg1.jpg" alt="Restaurant Photo">
+    </div>
+    <div class="description">
+        <p class="para1">Lorem ipsum dolor sit amet, consectetur adipison magna vitae libero luctus tristique. t, consectetur adipison magna vitae libero luctus tristique. Integer euismod lacus nec lectus bibt, consectetur adipison magna vitae libero luctus tristique. Integer euismod lacus nec lectus bibInteger euismod lacus nec lectus bibendum.</p>
+
+        <p class="para2">Lorem ipsum dolor sit amet, consectetur adipis nec lectus bibt, consectetur adipison magna vitae libero luctus tristique. Integer euismod lacus nec lectus bibInteger euismod lacus nec lectus bibendum.</p>
+    </div>
+</div>
+
+
+
+{{!-- -------------EVENTS------------ --}}
+    <div class="home-event" id="event">
+        <p><i class="fa-solid fa-utensils"></i> IGNYT Events <i class="fa-solid fa-wine-glass"></i></p>
+    </div>
+  <div class="carousel-event">
+        <img class="box-event" src="images/event1.jpg" alt="Image 1">
+        <img class="box-event" src="images/event2.jpg" alt="Image 3">
+        <img class="box-event" src="images/event3.jpg" alt="Image 4">
+        <!-- Duplicabox-eventthe imaimages/event1jpgess looping -->
+        <img class="box-event" src="images/event1.jpg" alt="Image 1">
+        <img class="box-event" src="images/event2.jpg" alt="Image 2">
+        <img class="box-event" src="images/event3.jpg" alt="Image 3">
+                <!-- Duplicabox-eventthe imaimages/event1jpgess looping -->
+        <img class="box-event" src="images/event1.jpg" alt="Image 1">
+        <img class="box-event" src="images/event2.jpg" alt="Image 2">
+        <img class="box-event" src="images/event3.jpg" alt="Image 3">
+                <!-- Duplicabox-eventthe imaimages/event1jpgess looping -->
+        <img class="box-event" src="images/event1.jpg" alt="Image 1">
+        <img class="box-event" src="images/event2.jpg" alt="Image 2">
+        <img class="box-event" src="images/event3.jpg" alt="Image 3">
+    </div>
+{{!-- -----------------SERVICES----------- --}}
+    <div class="service-heading" id="services">
+            <p><i class="fa-solid fa-utensils"></i> IGNYT Services <i class="fa-solid fa-wine-glass"></i></p>
+     </div>
+<div class="about-ignyt">
+    <div class="photo" onclick="toggleZoom(this)">
+        <img src="images/service.jpg" alt="Restaurant Photo">
+    </div>
+    <div class="description">
+        <p class="para1">Lorem ipsum dolor sit amet, consectetur adipison magna vitae libero luctus tristique. t, consectetur adipison magna vitae libero luctus tristique. Integer euismod lacus nec lectus bibt, consectetur adipison magna vitae libero luctus tristique. Integer euismod lacus nec lectus bibInteger euismod lacus nec lectus bibendum.</p>
+
+        <p class="para2">Lorem ipsum dolor sit amet, consectetur adipis nec lectus bibt, consectetur adipison magna vitae libero luctus tristique. Integer euismod lacus nec lectus bibInteger euismod lacus nec lectus bibendum.</p>
+    </div>
+</div>
+
+{{!-- -------------Gallery------------ --}}
+    <div class="home-galery">
+        <p><i class="fa-solid fa-utensils"></i> IGNYT Gallery<i class="fa-solid fa-wine-glass"></i></p>
+    </div>
+  <div class="carousel-galery">
+        <img class="box-galery" src="images/glry1.jpg" alt="Image 1">
+        <img class="box-galery" src="images/glry2.jpg" alt="Image 2">
+        <img class="box-galery" src="images/glry3.jpg" alt="Image 3">
+        <img class="box-galery" src="images/glry4.jpg" alt="Image 4">
+        <img class="box-galery" src="images/glry5.jpg" alt="Image 5">
+        <!-- Duplicabox-galerythe imaimages/glry1jpgess looping -->
+        <img class="box-galery" src="images/glry1.jpg" alt="Image 1">
+        <img class="box-galery" src="images/glry2.jpg" alt="Image 2">
+        <img class="box-galery" src="images/glry3.jpg" alt="Image 3">
+        <img class="box-galery" src="images/glry4.jpg" alt="Image 4">
+        <img class="box-galery" src="images/glry5.jpg" alt="Image 5">
+    </div>
+
+{{!-- ============footer------------- --}}
+
+
+
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="popupMenu" class="popup-menu">
+      <h2 style="text-align: center; color: white;">Categories</h2>
+      <ul>
+        <li><a href="recomandedItem">Recommended Items</a></li>
+        <li><a href="combos">Combos</a></li>
+        <li><a href="soups">Soups</a></li>
+        <li><a href="commingsoon">Starters</a></li>
+        <li><a href="commingsoon">Main Course</a></li>
+        <li><a href="commingsoon">Rice and Biryani</a></li>
+        <li><a href="commingsoon">Fried Rice and Noodles</a></li>
+        <li><a href="commingsoon">Snacks</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+{{!-- -------------Open Model1----------- --}}
+
+<!-- The Modal -->
+<div id="myModal1" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal1()">&times;</span>
+    <div id="popupMenu" class="popup-menu">
+      <h2 style="text-align: center; color: white;">Beer and Wine Categories</h2>
+      <ul>
+        <li><a href="ale">Ale</a></li>
+        <li><a href="lager">Lager</a></li>
+        <li><a href="stout">Stout</a></li>
+        <li><a href="commingsoon">IPA (India Pale Ale)</a></li>
+        <li><a href="commingsoon">Red Wine</a></li>
+        <li><a href="commingsoon">White Wine</a></li>
+        <li><a href="commingsoon">Rosé Wine</a></li>
+        <li><a href="commingsoon">Sparkling Wine</a></li>
+        <li><a href="commingsoon">Dessert Wine</a></li>
+        <!-- Add more categories as needed -->
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+    <div class="footer">
+  <p>&copy; 2024 Our Restaurant. All rights reserved.</p>
+    </div>
+    <script src="javascripts/index.js"></script>
+    <script src="https://kit.fontawesome.com/1bd84261e3.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

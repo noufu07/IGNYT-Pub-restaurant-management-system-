@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orders List</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color:#fffdea;
+  color: brown;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color:#fffdea;
+}
+
+.done {
+  background-color: green;
+  color: white;
+}
+
+.pending {
+  background-color: rgba(255, 20, 20, 0.741);
+  color: white;
+}
+
+button {
+  background-color: #746b42;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+button:hover {
+  background-color:#c5ac41;
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  .table-container {
+    overflow-x: auto;
+    padding-bottom: 20px; /* Add some space at the bottom for better UI */
+  }
+
+  table {
+    min-width: 600px; /* Set a minimum width for the table to prevent content from being squished */
+  }
+
+  th, td {
+    font-size: 14px; /* Reduce font size for better readability on smaller screens */
+  }
+
+  button {
+    font-size: 14px; /* Reduce button font size for better UI on smaller screens */
+  }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Admin Orders</h2>
+    <button onclick="logout()">Logout</button> <!-- Logout button placed at the top -->
+    <button onclick="clearOrders()">Clear All Orders</button> <!-- Clear all orders button -->
+    {{#if orders.length}}
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Food Name</th>
+            <th>Food Price</th>
+            <th>Table</th>
+            <th>Plates</th>
+            <th>Total Amount</th> <!-- Add column header for total amount -->
+
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each orders}}
+          <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.phone}}</td>
+            <td>{{this.foodName}}</td>
+            <td>{{this.foodPrice}}</td>
+            <td>{{this.table}}</td>
+            <td>{{this.plates}}</td>
+            <td>{{this.totalAmount}}</td> <!-- Display total amount for each order -->
+
+            <td class="{{#if this.status}}done{{else}}pending{{/if}}">
+              {{#if this.status}}
+              Done
+              {{else}}
+              <button onclick="markOrderAsDone('{{this._id}}')">Mark as Done</button>
+              {{/if}}
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    {{else}}
+    <p>No orders available</p>
+    {{/if}}
+  </div>
+
+  <script>
+    function markOrderAsDone(orderId) {
+      // Send a request to mark the order as done
+      fetch(`/admin/orders/${orderId}/done`, { method: 'POST' })
+        .then(response => {
+          if (response.ok) {
+            alert('Order marked as done');
+            window.location.reload(); // Refresh the page to update the table
+          } else {
+            alert('Failed to mark order as done');
+          }
+        })
+        .catch(error => {
+          console.error('Error marking order as done:', error);
+          alert('An error occurred while marking order as done');
+        });
+    }
+
+    function logout() {
+      // Redirect to the login page
+      window.location.href = '/admin';
+    }
+
+    function clearOrders() {
+      // Send a request to clear all orders
+      fetch('/admin/orders/clear', { method: 'POST' })
+        .then(response => {
+          if (response.ok) {
+            alert('All orders cleared');
+            window.location.reload(); // Refresh the page to update the table
+          } else {
+            alert('Failed to clear orders');
+          }
+        })
+        .catch(error => {
+          console.error('Error clearing orders:', error);
+          alert('An error occurred while clearing orders');
+        });
+    }
+
+
+        // Function to reload the page every 10 seconds
+  function reloadPage() {
+  window.location.reload();
+  }
+setInterval(reloadPage, 10000);  
+   
+  </script>
+</body>
+</html>

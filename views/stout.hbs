@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order</title>
+<link rel="stylesheet" href="stylesheets/recomandedItem.css">
+
+
+</head>
+<body>
+<h1 style="text-align: center;color:brown">Stout</h1>
+
+<!-- Cart Button -->
+<div class="cart-button" id="cart-button">Cart</div>
+
+<!-- Cart Container -->
+<div class="cart-container" id="cart-container">
+  <h2>Cart</h2>
+  <div id="cart-items"></div>
+  <div class="cart-total" id="cart-total">Total: $0</div>
+  <button id="checkout-button">Checkout</button>
+</div>
+
+<!-- Card Container -->
+<div class="card-container">
+  <!-- Repeat this card div for as many cards as needed -->
+  <div class="card" data-food-name="Brown Ale" data-food-price="200">
+    <img src="images/ale2.jpg" alt="Product Image">
+    <div class="card-header">
+      <div class="card-title">Brown Ale</div>
+      <div class="card-price">200Rs</div>
+    </div>
+    <div class="card-description">Brown ale is a style of beer with a dark amber or brown colour. </div>
+    <div class="btn-container">
+      <button class="btn order-now">Order Now</button>
+      <button class="btn add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+    <div class="card" data-food-name="American Pale Ale" data-food-price="250">
+    <img src="images/ale1.jpg" alt="Product Image">
+    <div class="card-header">
+      <div class="card-title">American Pale Ale</div>
+      <div class="card-price">250Rs</div>
+    </div>
+    <div class="card-description">grilled chicken patty nestled between soft buns, offering satisfying bite.</div>
+    <div class="btn-container">
+      <button class="btn order-now">Order Now</button>
+      <button class="btn add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+    <div class="card" data-food-name="Robust Porter" data-food-price="300">
+    <img src="images/ale3.jpg" alt="Product Image">
+    <div class="card-header">
+      <div class="card-title">Robust Porter.</div>
+      <div class="card-price">300Rs</div>
+    </div>
+    <div class="card-description">Chiken fry starter 100 grams for with boneless.</div>
+    <div class="btn-container">
+      <button class="btn order-now">Order Now</button>
+      <button class="btn add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+    <div class="card" data-food-name="American Wheat" data-food-price="200">
+    <img src="images/ale4.jpg" alt="Product Image">
+    <div class="card-header">
+      <div class="card-title">American Wheat</div>
+      <div class="card-price">200Rs</div>
+    </div>
+    <div class="card-description">Chiekn and juice combo consist one juice and two types of tikka.</div>
+    <div class="btn-container">
+      <button class="btn order-now">Order Now</button>
+      <button class="btn add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+    <div class="card" data-food-name="American Wheat" data-food-price="200">
+    <img src="images/ale4.jpg" alt="Product Image">
+    <div class="card-header">
+      <div class="card-title">American Wheat</div>
+      <div class="card-price">200Rs</div>
+    </div>
+    <div class="card-description">Chiekn and juice combo consist one juice and two types of tikka.</div>
+    <div class="btn-container">
+      <button class="btn order-now">Order Now</button>
+      <button class="btn add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+     <div class="card" data-food-name="Brown Ale" data-food-price="200">
+    <img src="images/ale2.jpg" alt="Product Image">
+    <div class="card-header">
+      <div class="card-title">Brown Ale</div>
+      <div class="card-price">200Rs</div>
+    </div>
+    <div class="card-description">Brown ale is a style of beer with a dark amber or brown colour. </div>
+    <div class="btn-container">
+      <button class="btn order-now">Order Now</button>
+      <button class="btn add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+    <div class="card" data-food-name="American Pale Ale" data-food-price="250">
+    <img src="images/ale1.jpg" alt="Product Image">
+    <div class="card-header">
+      <div class="card-title">American Pale Ale</div>
+      <div class="card-price">250Rs</div>
+    </div>
+    <div class="card-description">grilled chicken patty nestled between soft buns, offering satisfying bite.</div>
+    <div class="btn-container">
+      <button class="btn order-now">Order Now</button>
+      <button class="btn add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+    <div class="card" data-food-name="Robust Porter" data-food-price="300">
+    <img src="images/ale3.jpg" alt="Product Image">
+    <div class="card-header">
+      <div class="card-title">Robust Porter.</div>
+      <div class="card-price">300Rs</div>
+    </div>
+    <div class="card-description">Chiken fry starter 100 grams for with boneless.</div>
+    <div class="btn-container">
+      <button class="btn order-now">Order Now</button>
+      <button class="btn add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+  
+
+  <!-- Add more card elements here -->
+</div>
+
+<!-- Popup Form -->
+<div class="overlay" id="overlay"></div>
+<div class="popup-form" id="popup-form">
+  <span class="close-icon" onclick="closePopup()">✖</span> <!-- Close icon -->
+  <h2>Order Form</h2>
+  <form id="order-form" action="/recomandedItem/submit-order" method="POST" enctype="multipart/form-data" >
+    <input type="hidden" id="food-name"  name="foodName">
+    <input type="hidden" id="food-price" name="foodPrice">
+
+    <label for="food-name-display">Food Name:</label>
+    <input type="text" id="food-name-display" name="food-name-display" readonly><br>
+    <label for="food-price-display">Food Price:</label>
+    <input type="text" id="food-price-display" name="food-price-display" readonly><br>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" name="phone" required><br>
+    <label for="table">Table Number:</label>
+    <select id="table" name="table" required>
+      <option value="">Select Table</option>
+      <option value="1">Table 1</option>
+      <option value="2">Table 2</option>
+      <option value="3">Table 3</option>
+      <option value="4">Table 4</option>
+      <option value="5">Table 5</option>
+      <option value="6">Table 6</option>
+    </select><br><br>
+
+    <label for="plates">Number of Plates:</label>
+    <input type ="number" id="plates" name="plates" required><br>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<script src="javascripts/recomandedItem.js"></script>
+
+</body>
+</html>
+
