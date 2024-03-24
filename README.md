@@ -43,5 +43,5 @@ This project is licensed under the [MIT License](https://github.com/noufu07/IGNY
 For questions or support, please contact the project maintainer:
 [Mohamad Nowfal](https://github.com/noufu07)
 
-[My Portfolio](noufu.vercel.app)
+[My Portfolio](https://noufu.vercel.app/)
 
