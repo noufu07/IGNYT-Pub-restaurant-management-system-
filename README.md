@@ -4,6 +4,11 @@ Welcome to the IGNYT Pub Restaurant Management System repository! This project i
 
 ## Website is Live!
 Visit : [Click here](https://ignytpub.vercel.app/)
+
+## Admin Username and Password
+Username : Admin
+
+Password : admin@123
 ## Features
 
 - **Order Management:** Allows customers to place orders for food and beverages.
